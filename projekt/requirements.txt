@@ -1,0 +1,27 @@
+asgiref==3.3.1
+astroid==2.4.2
+cmake==3.17.3
+colorama==0.4.3
+Django==3.1.5
+django-appconf==1.0.4
+django-filter==1.1.0
+django-tinymce==3.2.0
+django-tinymce-lite==0.0.2
+djangorestframework==3.12.2
+isort==5.6.3
+lazy-object-proxy==1.4.3
+mccabe==0.6.1
+mysql==0.0.2
+mysql-connector==2.2.9
+mysql-connector-python==8.0.22
+mysqlclient @ file:///C:/Users/jukic/Downloads/mysqlclient-2.0.1-cp38-cp38-win_amd64.whl
+protobuf==3.14.0
+pylint==2.6.0
+pylint-django==2.3.0
+pylint-plugin-utils==0.6
+pytz==2020.5
+six==1.15.0
+sql==0.4.0
+sqlparse==0.4.1
+toml==0.10.1
+wrapt==1.12.1

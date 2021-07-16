@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"/> 
+
+<h2>List of students:</h2>
+
+<table class="pregled">
+    <tr>
+        <th>Email</th>
+    </tr>
+    <form method="POST">
+        {% for user in studenti %}
+        {% if not user.role == 'MENTOR' %}
+            <tr>
+                <td> <a href="{% url 'upisni_list' user.id %}"> {{user.email}} </a></td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+    </form>
+</table>
+
+
+{% endblock %}

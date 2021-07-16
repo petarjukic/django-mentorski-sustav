@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/upisni_list.css' %}"/> 
+    
+<h2> Upisni list za {{ime.email}} </h2>  
+
+<div class="check"></div>
+
+<div class="parent">
+
+    <div class="left">
+        {% for id, predmet in neupisani.items %}
+                {{predmet}}
+                <a href="{%url 'upis_predmeta' predmet_id=id student_id=ime.id %}" class="plus"></a> <br>
+        {% endfor %}
+    
+    </div>
+    <div class="right">
+        {% if ime.status == 'REDOVNI' %}
+            {% with ''|center:6 as range %}
+                {% for _ in range %}
+                    <p style="color:navy; font-size:25px;">Semestar {{forloop.counter}}:</p>
+                    {% for predmet in upisani %}
+                        {% if predmet.predmet_id.sem_redovni == forloop.parentloop.counter  %}
+                            {{predmet.predmet_id}}
+                             <button class="button button1"> <a href="{%url 'ispis_predmeta' predmet_id=predmet.predmet_id_id student_id=ime.id %}">X</a></button> 
+                             {% if predmet.status == 'nepolozen' and request.user.role == 'MENTOR' %}
+                                &emsp; <a href="{%url 'polozio_predmet' predmet_id=predmet.predmet_id_id student_id=ime.id %}" > 
+                                    <div class="check"></div></a> 
+                             {% endif %}<br>
+                        {% endif %} 
+                    {% endfor %}
+                {% endfor %}
+            {% endwith %}
+
+        {% else %}
+            {% with ''|center:8 as range %}
+                {% for _ in range %}
+                    <br>Semestar {{forloop.counter}}   
+                    {% for predmet in upisani %}
+                        {% if predmet.predmet_id.sem_izvanredni == forloop.parentloop.counter %}
+                            {{predmet.predmet_id}}
+                            <button class="button button1" > <a href="{%url 'ispis_predmeta' predmet_id=predmet.predmet_id_id student_id=ime.id %}">X</a></button>
+                            {% if predmet.status == 'nepolozen' and request.user.role == 'MENTOR' %}
+                            &emsp; <a href="{%url 'polozio_predmet' predmet_id=predmet.predmet_id_id student_id=ime.id %}" > 
+                                <div class="check"></div></a> 
+                         {% endif %}<br>
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+            {% endwith %}
+    {% endif %}
+
+    </div>
+
+{% endblock %}

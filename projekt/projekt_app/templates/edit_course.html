@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block content%}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"/> 
+
+<h2> Update course </h2>
+
+<form method="POST">
+    {% csrf_token %}
+<table class="pregled">
+    <tr>
+        <th> Ime </th>
+        <th> Kod </th>
+        <th> Program </th>
+        <th> Bodovi </th>
+        <th> Semestar redovni </th>
+        <th> Semestar izvanredni </th>
+        <th> Izborni </th>
+    </tr>
+    <tr>
+        <td> {{form.ime}} </td>
+        <td> {{form.kod}} </td>
+        <td> {{form.program}} </td>
+        <td> {{form.bodovi}} </td>
+        <td> {{form.sem_redovni}} </td>
+        <td> {{form.sem_izvanredni}} </td>
+        <td> {{form.izborni}} </td>
+    </tr>
+</table>
+    <input style="background-color: forestgreen;" type="submit" value="Add!">
+</form>
+{%endblock%}

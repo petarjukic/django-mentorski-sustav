@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/> 
+
+<h3 style="text-align: center;"> Registration </h3>
+<div class="login">
+    <form method="POST">
+        {% for field in form %}
+            <p>
+                {{ field.label_tag }}
+                {{ field }}<br>
+                
+                {% for error in field.errors %}
+                    <p style="color: red"> {{ error }}</p>
+                {% endfor %}
+            </p>
+        {% endfor %}
+
+    {% csrf_token %}
+    <input type="submit" value="Register">
+</div>
+</form>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mentorski</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"/> 
+    </head>
+    <body>
+        <div class="navigacija">
+            <ul>
+                <li><a href="/login"> Login </a></li>
+                <li><a href="/register"> Register </a></li>
+                <li> <a href="/logout"> Logout </a> </li>
+                {% if request.user.role == 'MENTOR' %}
+                    <li> <a href="/courses">Courses</a> </li>
+                    <li> <a href="/all_students">Students</a> </li>
+                {% endif %}
+
+            </ul>
+        </div>
+        <div>
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

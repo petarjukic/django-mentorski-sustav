@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<h2> Course detail </h2>
+
+<table class="pregled">
+    <tr>
+        <th>Ime</th>
+        <th>Kod</th>
+        <th>Program</th>
+        <th>Bodovi</th>
+        <th>Semestar redovni</th>
+        <th>Semestar sem_izvanredni</th>
+        <th>Izbroni</th>
+    </tr>
+    
+        {% for c in course %}
+            <tr>
+                <td> {{c.ime}} </td>
+                <td> {{c.kod}} </td>
+                <td> {{c.program}} </td>
+                <td> {{c.bodovi}} </td>
+                <td> {{c.sem_redovni}} </td>
+                <td> {{c.sem_izvanredni}} </td>
+                <td> {{c.izborni}} </td>
+            </tr>
+        {% endfor %}
+</table>
+{% endblock %}

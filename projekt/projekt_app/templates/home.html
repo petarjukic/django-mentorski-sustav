@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/> 
+
+{% if not request.user.is_superuser %}
+     <a href="{% url 'upisni_list' request.user.id %}"> Upisni list </a> 
+{% endif %}
+
+<h1> Home page </h1>
+
+<h1>
+    {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+</h1>
+
+{% endblock %}

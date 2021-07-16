@@ -1,0 +1,68 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #dddddd83;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    padding: 8px;
+  }
+
+  .pregled {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  .pregled td, .pregled th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  .pregled tr:nth-child(even){background-color: #f2f2f2;}
+
+  .pregled tr:hover {background-color: #ddd;}
+
+  .pregled th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+} 
+
+h3 {
+  color:#4CAF50;
+}
+
+h2 {
+  color: cadetblue;
+}
+
+.navigacija a:visitedv{
+    color:green;
+  }
+
+.navigacija a:hover {
+  color: darkorange;
+}
+
+.navigacija a:active {
+  color: maroon;
+}
+
+.navigacija a.velicina:link {
+  color: crimson;
+}
+
+.navigacija a.velicina:hover {
+  color: darkorange;
+  font-size: 150%;
+}

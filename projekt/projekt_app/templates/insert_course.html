@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/> 
+
+<div class="login">
+<h2>Insert course </h2>
+
+<form method="POST">
+    {{ form.as_p }}
+    {% csrf_token %}<br>
+    <input type="submit" value="Add">
+</div>
+</form>
+
+{% endblock %}

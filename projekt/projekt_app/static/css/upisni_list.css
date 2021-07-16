@@ -1,0 +1,114 @@
+body{
+  background-color:mintcream;
+}
+
+h2 {
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  right: 32px;
+  top: 32px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
+}
+
+.close:hover {
+  opacity: 1;
+}
+
+.close:before, .close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color:crimson;
+}
+
+.close:before {
+  transform: rotate(45deg);
+}
+
+.close:after {
+  transform: rotate(-45deg);
+}
+.check {
+  display: inline-block;
+  transform: rotate(45deg);
+  height: var(--height);
+  width: var(--width);
+  border-bottom: var(--borderWidth) solid var(--borderColor);
+  border-right: var(--borderWidth) solid var(--borderColor);
+}
+
+
+
+.parent
+{
+    width:100%;
+}
+.left
+{
+    float:left;
+    width:50%;
+    box-sizing:border-box;
+    padding:5px;
+    border:#CCC solid 1px;
+    min-height:200px;
+}
+
+.right
+{
+    float:left;
+    width:50%;
+    box-sizing:border-box;
+    padding:5px;
+    border:#CCC solid 1px;
+    min-height:200px;
+}  
+
+
+
+.left .plus {
+  display: block;
+  height: 0.6em;
+  width: 0.6em;
+  font-size: 40px;
+  text-align: left;
+  line-height: 0.5em;
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: lighter;
+  color: #000000;
+  background-color: grey; 
+}
+
+.left .plus::before {
+  display: block;
+  content: '+';
+}
+
+:root {
+  --borderWidth: 7px;
+  --height: 24px;
+  --width: 12px;
+  --borderColor: #78b13f;
+}
+
+.button {
+  background-color: crimson;
+  border: darkblue;
+  text-align: center;
+  text-decoration: darkturquoise;
+}
+
+.button1:hover {
+  background-color: #008CBA;
+  color: white;
+}

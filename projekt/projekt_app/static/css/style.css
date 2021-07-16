@@ -1,0 +1,40 @@
+h1 {
+    color:crimson;
+    text-align:center;
+  }
+
+  body {
+    background-color:mintcream
+  }
+
+  p {
+    color:navy;
+  }
+
+  input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: left;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+  .login {
+    text-align: center;
+  }
+
+  .login input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float:none;
+  }
